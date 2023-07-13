@@ -1,0 +1,28 @@
+.section {
+   display: flex;
+   justify-content: space-between;
+   padding-left: 50px;
+   white-space: pre-line;
+}
+  
+.productList {
+   list-style: none;
+   display: flex;
+   gap: 30px;
+}
+  
+.productItem {
+   display: flex;
+   flex-direction: column;
+}
+  
+.productImage {
+   width: 264px;
+   height: 210px;
+   border-radius: 7%;
+}
+  
+.productTitle {
+   font-weight: bold;
+}
+  
