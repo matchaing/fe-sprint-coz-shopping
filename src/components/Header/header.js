@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import styles from "./header.module.css";
 
 function Header() {
@@ -9,11 +10,10 @@ function Header() {
     window.location.href = `http://localhost:3000/${page}`;
   };
 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // 드롭다운 상태 관리
+
   const toggleDropdown = () => {
-    const dropdown = document.getElementById("dropdown");
-    if (dropdown) {
-      dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
-    }
+    setIsDropdownOpen(!isDropdownOpen); // 드롭다운 상태 반전
   };
 
   return (
@@ -29,19 +29,21 @@ function Header() {
           <span></span>
         </div>
       </div>
-      <div id="dropdown" className={styles.dropdown}>
-        <ul className={styles.dropdownInner}>
-          <li>이민주 님, 안녕하세요!</li>
-          <li onClick={() => handleSessionClick("products/list")}>
-            <img src="/상품 아이콘.png" alt="상품 아이콘" className={styles.icon} />
-            <span>상품 리스트 페이지</span>
-          </li>
-          <li onClick={() => handleSessionClick("bookmark")}>
-            <img src="/북마크 아이콘.png" alt="북마크 아이콘" className={styles.icon} />
-            <span>북마크 페이지</span>
-          </li>
-        </ul>
-      </div>
+      {isDropdownOpen && ( // 드롭다운이 열려 있을 때만 렌더링
+        <div id="dropdown" className={styles.dropdown}>
+          <ul className={styles.dropdownInner}>
+            <li>이민주 님, 안녕하세요!</li>
+            <li onClick={() => handleSessionClick("products/list")}>
+              <img src="/상품 아이콘.png" alt="상품 아이콘" className={styles.icon} />
+              <span>상품 리스트 페이지</span>
+            </li>
+            <li onClick={() => handleSessionClick("bookmark")}>
+              <img src="/북마크 아이콘.png" alt="북마크 아이콘" className={styles.icon} />
+              <span>북마크 페이지</span>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }
