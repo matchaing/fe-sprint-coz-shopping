@@ -1,29 +1,28 @@
 .section {
    display: flex;
    justify-content: space-between;
-   padding: 20px;
+   padding-left: 50px;
+   white-space: pre-line;
 }
   
 .productList {
    list-style: none;
    display: flex;
-   gap: 20px;
-
+   gap: 30px;
 }
   
 .productItem {
    display: flex;
    flex-direction: column;
-   align-items: center;
 }
   
 .productImage {
    width: 264px;
    height: 210px;
-   border-radius: 10%;
+   border-radius: 7%;
 }
   
 .productTitle {
-   text-align: start;
+   font-weight: bold;
 }
   

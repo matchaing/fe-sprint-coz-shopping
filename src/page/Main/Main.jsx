@@ -21,7 +21,8 @@ function Main() {
   return (
     <>
       <div className={styles.section}>
-        <h2>상품 리스트</h2>
+        <div>
+          <h2>상품 리스트</h2>
           <ul className={styles.productList}>
           {products.map((product, index) => (
             <li key={product.id} className={styles.productItem}>
@@ -29,12 +30,14 @@ function Main() {
               <p className={styles.productTitle}>{product.title}</p>
             </li>
           ))}
-        </ul> 
+          </ul>
+        </div>
       </div>
   
       <div className={styles.section}>
-        <h2>북마크 리스트</h2>
-        
+        <div>
+          <h2>북마크 리스트</h2>
+        </div>
       </div>
     </>
   );
